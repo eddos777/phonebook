@@ -1,0 +1,26 @@
+
+
+create:
+    path: /admin/products/create
+    defaults: { _controller: ShopBundle:Site:create}
+
+view:
+    path: /admin/products/view
+    defaults: { _controller: ShopBundle:Site:view}
+    requirements:
+        id: \d+
+
+update:
+    path: /admin/products/update
+    defaults: { _controller: ShopBundle:Site:update}
+    requirements:
+        id: \d+
+
+delete:
+    path: /admin/products/delete
+    defaults: { _controller: ShopBundle:Site:delete}
+    requirements:
+        id: \d+
+index:
+    path: /
+    defaults: { _controller: ShopBundle:Site:index}

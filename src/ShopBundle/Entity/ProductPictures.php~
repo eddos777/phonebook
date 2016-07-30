@@ -1,0 +1,83 @@
+<?php
+
+namespace ShopBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ProductPictures
+ * @ORM\Table(name="product_pictures")
+ * @ORM\Entity
+ */
+class ProductPictures
+{
+    /**
+     * @var integer
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     * @ORM\Column(name="product_id", type="integer", length=80)
+     */
+    private $productId;
+
+    /**
+     * @var string
+     * @ORM\Column(name="uri", type="text")
+     */
+    private $uri;
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getProductId()
+    {
+        return $this->productId;
+    }
+
+    /**
+     * @param string $productId
+     */
+    public function setProductId($productId)
+    {
+        $this->productId = $productId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUri()
+    {
+        return $this->uri;
+    }
+
+    /**
+     * @param string $uri
+     */
+    public function setUri($uri)
+    {
+        $this->uri = $uri;
+    }
+
+
+}

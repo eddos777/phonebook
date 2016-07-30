@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <a href="{{ path("create") }}" class="btn btn-success">Добавить новую запись</a>
+    <div class="row"></div>
+    <table class="table table-condensed">
+        <tr>
+            {# sorting of properties based on query components #}
+            <th>{{ knp_pagination_sortable(pagination, 'Id', 'p.id') }}</th>
+            <th{% if pagination.isSorted('p.name') %} class="sorted"{% endif %}>
+                {{ knp_pagination_sortable(pagination, 'Имя', 'p.name') }}</th>
+            <th>{{ knp_pagination_sortable(pagination, 'Номер Телефона', ['Number', 'p.number']) }}</th>
+            <th>{{ knp_pagination_sortable(pagination, 'Описание', ['About', 'p.about']) }}</th>
+            <th>Управление</th>
+        </tr>
+
+        {# table body #}
+        {% for product in pagination %}
+            <tr {% if loop.index is odd %}class="color"{% endif %}>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.number }}</td>
+                <td>{{ product.about }}</td>
+                <td>
+                    <a class="glyphicon glyphicon-eye-open" href="/admin/products/view?id={{ product.id }}" role="button"></a>
+                    <a class="glyphicon glyphicon-pencil" href="/admin/products/update?id={{ product.id }}" role="button"></a>
+                    <a class="glyphicon glyphicon-trash" href="/admin/products/delete?id={{ product.id }}" role="button"></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+{% endblock %}

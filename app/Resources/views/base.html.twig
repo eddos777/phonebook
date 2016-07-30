@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}PhoneBook{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
+    <link rel="stylesheet"
+          href="{{ asset('assets/vendor/bootstrap/dist/css/bootstrap.min.css') }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font awesome -->
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+    <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <!-- Product view slider -->
+    <link rel="stylesheet" type="text/css" href="css/jquery.simpleLens.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <!-- price picker slider -->
+    <link rel="stylesheet" type="text/css" href="css/nouislider.css">
+    <!-- Theme color -->
+    <link id="switcher" href="css/theme-color/default-theme.css" rel="stylesheet">
+    <!-- <link id="switcher" href="css/theme-color/bridge-theme.css" rel="stylesheet"> -->
+    <!-- Top Slider CSS -->
+    <link href="css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
+
+    <!-- Main style sheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+</head>
+<body>
+<div class="container">
+    {% block body %}{% endblock %}
+    {% block javascripts %}{% endblock %}
+</div>
+
+
+<script src="{{ asset('assets/vendor/jquery/dist/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+<!-- SmartMenus jQuery plugin -->
+<script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+<!-- SmartMenus jQuery Bootstrap Addon -->
+<script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>
+<!-- To Slider JS -->
+<script src="js/sequence.js"></script>
+<script src="js/sequence-theme.modern-slide-in.js"></script>
+<!-- Product view slider -->
+<script type="text/javascript" src="js/jquery.simpleGallery.js"></script>
+<script type="text/javascript" src="js/jquery.simpleLens.js"></script>
+<!-- slick slider -->
+<script type="text/javascript" src="js/slick.js"></script>
+<!-- Price picker slider -->
+<script type="text/javascript" src="js/nouislider.js"></script>
+<!-- Custom js -->
+<script src="js/custom.js"></script>
+
+</body>
+</html>
